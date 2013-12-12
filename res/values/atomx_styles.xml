@@ -11,4 +11,11 @@
     <!-- Applications fragment -->
     <dimen name="default_margin">16dp</dimen>
 
+    <style name="LockPatternSizeHeaderStyle" parent="android:style/TextAppearance.Material.Subhead">
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:textColor">@color/primary_dark_material_light</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+
 </resources>
