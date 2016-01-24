@@ -31,6 +31,13 @@
             android:summary="@string/network_traffic_state_summary"
             android:defaultValue="false" />
 
+        <co.atomx.support.preference.SystemSettingSwitchPreference
+            android:key="network_traffic_arrow"
+            android:title="@string/network_traffic_arrow_title"
+            android:summary="@string/network_traffic_arrow_summary"
+            android:defaultValue="true"
+            android:dependency="network_traffic_state" />
+
         <co.atomx.support.preference.SystemSettingSeekBarPreference
             android:key="network_traffic_autohide_threshold"
             android:title="@string/network_traffic_autohide_threshold_title"
