@@ -18,4 +18,7 @@
     <!-- CitricOS maintainer -->
     <string name="maintainer">CitricOS Maintainer</string>
 
+    <!-- CitricOS Build Date -->
+    <string name="build_date">CitricOS Build date</string>
+
 </resources>
