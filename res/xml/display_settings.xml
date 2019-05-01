@@ -187,4 +187,13 @@
         android:persistent="false"
         android:fragment="com.android.settings.display.HiddenAppSettingsFragment" />
     
+    <PreferenceCategory
+        android:title="@string/customization_category_title">
+
+        <Preference
+            android:key="display_customizations"
+            android:title="@string/display_customization_title"
+            android:fragment="com.android.settings.atomx.fragments.DisplayCustomizations" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
