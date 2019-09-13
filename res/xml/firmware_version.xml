@@ -30,6 +30,14 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
+    <!-- AtomX version -->
+    <Preference
+        android:key="atomx_version"
+        android:title="@string/atomx_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.AtomXVersionPreferenceController"/>
+
     <!-- Security patch -->
     <Preference
         android:key="security_key"
