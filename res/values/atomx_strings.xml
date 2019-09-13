@@ -11,4 +11,8 @@
     <!-- AtomX Build Date -->
     <string name="build_date">Build date</string>
 
+    <!-- AtomX version -->
+    <string name="atomx_version">AtomX version</string>
+    <string name="atomx_version_default">Unknown</string>
+
 </resources>
