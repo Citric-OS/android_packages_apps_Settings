@@ -44,6 +44,14 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.citric.CitricMaintainerPreferenceController"/>
 
+    <!-- CitricOS version -->
+    <Preference
+        android:key="citric_version"
+        android:title="@string/citric_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.CitricVersionPreferenceController"/>
+
     <!-- Security patch -->
     <Preference
         android:key="security_key"

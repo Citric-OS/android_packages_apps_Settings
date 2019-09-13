@@ -15,6 +15,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- CitricOS version -->
+    <string name="citric_version">CitricOS version</string>
+    <string name="citric_version_default">Unknown</string>
+
     <!-- CitricOS maintainer -->
     <string name="maintainer">CitricOS Maintainer</string>
 
