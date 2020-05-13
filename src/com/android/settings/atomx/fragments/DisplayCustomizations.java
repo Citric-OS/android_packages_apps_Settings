@@ -19,30 +19,23 @@ package com.android.settings.atomx.fragments;
 
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.Settings;
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import co.atomx.support.preference.SystemSettingMasterSwitchPreference;
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.atomx.AtomXUtils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-
-import co.atomx.support.preference.SystemSettingSeekBarPreference;
-import co.atomx.support.preference.SystemSettingSwitchPreference
 
 public class DisplayCustomizations extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Display Customizations";
-    private static final String KEY_NETWORK_TRAFFIC = "network_traffic_location";
-    private static final String KEY_NETWORK_TRAFFIC_ARROW = "network_traffic_arrow";
-    private static final String KEY_NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide_threshold";
+    private static final String KEY_NETWORK_TRAFFIC = "network_traffic_state";
 
-    private ListPreference mNetworkTraffic;
-    private SystemSettingSwitchPreference mNetworkTrafficArrow;
-    private SystemSettingSeekBarPreference mNetworkTrafficAutohide;
+    private SystemSettingMasterSwitchPreference mNetworkTraffic;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,52 +44,24 @@ public class DisplayCustomizations extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mNetworkTraffic = (ListPreference) findPreference(KEY_NETWORK_TRAFFIC);
-        int networkTraffic = Settings.System.getInt(resolver,
-        Settings.System.NETWORK_TRAFFIC_LOCATION, 0);
-        CharSequence[] NonNotchEntries = { getResources().getString(R.string.network_traffic_disabled),
-                getResources().getString(R.string.network_traffic_statusbar),
-                getResources().getString(R.string.network_traffic_qs_header) };
-        CharSequence[] NotchEntries = { getResources().getString(R.string.network_traffic_disabled),
-                getResources().getString(R.string.network_traffic_qs_header) };
-        CharSequence[] NonNotchValues = {"0", "1" , "2"};
-        CharSequence[] NotchValues = {"0", "2"};
-        mNetworkTraffic.setEntries(AtomXUtils.hasNotch(getActivity()) ? NotchEntries : NonNotchEntries);
-        mNetworkTraffic.setEntryValues(AtomXUtils.hasNotch(getActivity()) ? NotchValues : NonNotchValues);
-        mNetworkTraffic.setValue(String.valueOf(networkTraffic));
-        mNetworkTraffic.setSummary(mNetworkTraffic.getEntry());
+        mNetworkTraffic = (SystemSettingMasterSwitchPreference)
+                findPreference(KEY_NETWORK_TRAFFIC);
+        boolean enabled = Settings.System.getIntForUser(resolver,
+                KEY_NETWORK_TRAFFIC, 0, UserHandle.USER_CURRENT) == 1;
+        mNetworkTraffic.setChecked(enabled);
         mNetworkTraffic.setOnPreferenceChangeListener(this);
-
-        mNetworkTrafficArrow = (SystemSettingSwitchPreference) findPreference(KEY_NETWORK_TRAFFIC_ARROW);
-        mNetworkTrafficAutohide = (SystemSettingSeekBarPreference) findPreference(KEY_NETWORK_TRAFFIC_AUTOHIDE);
-        updateNetworkTrafficPrefs(networkTraffic);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mNetworkTraffic) {
-            int networkTraffic = Integer.valueOf((String) newValue);
-            int index = mNetworkTraffic.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_LOCATION, networkTraffic);
-            mNetworkTraffic.setSummary(mNetworkTraffic.getEntries()[index]);
-            updateNetworkTrafficPrefs(networkTraffic);
+	if (preference == mNetworkTraffic) {
+            boolean enabled = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver, KEY_NETWORK_TRAFFIC,
+                    enabled ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
             }
         return false;
-    }
-
-    private void updateNetworkTrafficPrefs(int networkTraffic) {
-        if (mNetworkTraffic != null) {
-            if (networkTraffic == 0) {
-                mNetworkTrafficArrow.setEnabled(false);
-                mNetworkTrafficAutohide.setEnabled(false);
-            } else {
-                mNetworkTrafficArrow.setEnabled(true);
-                mNetworkTrafficAutohide.setEnabled(true);
-            }
-        }
     }
 
     @Override
