@@ -56,4 +56,9 @@
     <string name="gesture_navbar_category_title">Navigation bar</string>
     <string name="immersive_navigation_title">Immersive navigation</string>
     <string name="immersive_navigation_summary">Hide the gesture pill and navigation bar padding.</string>
+
+    <!-- Status bar Icon Manager -->
+    <string name="icon_manager_title">Icon manager</string>
+    <string name="icon_manager_summary">Control visibility of status bar icons</string>
+
 </resources>
