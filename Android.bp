@@ -108,6 +108,7 @@ android_library {
         "SettingsGoogle-lib",
         "AtomXSupport-libs",
         "faceunlock_framework",
+        "glide",
     ],
     manifest: "AndroidManifest.xml",
     additional_manifests: ["SettingsGoogle-Manifest.xml"],
@@ -179,4 +180,9 @@ filegroup {
 filegroup {
     name: "Settings_manifest",
     srcs: ["AndroidManifest.xml"],
+}
+
+android_library_import {
+    name: "glide",
+    aars: ["libs/glide-4.9.0.aar"],
 }
