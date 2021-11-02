@@ -46,6 +46,14 @@
         android:title="@string/apps_dashboard_title"
         android:summary="@string/app_and_notification_dashboard_summary"/>
 
+	<Preference
+        android:key="top_level_citric"
+        android:title="@string/citric_settings_title"
+        android:summary="@string/citric_settings_summary"
+        android:icon="@drawable/ic_citric"
+        android:order="-125"
+        android:fragment="com.citric.flavours.CitricFlavours"/>
+
     <Preference
         android:fragment="com.android.settings.notification.ConfigureNotificationSettings"
         android:icon="@drawable/ic_notifications"

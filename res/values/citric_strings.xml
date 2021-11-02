@@ -31,4 +31,9 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Swipe to screenshot</string>
     <string name="three_finger_gesture_summary">Swipe down with three fingers to take a screenshot</string>
+
+    <!-- Citric Flavours -->
+    <string name="citric_settings_title">Citric Flavours</string>
+    <string name="citric_settings_summary">Feel the citric essence of flavours along with a sip of lemonade</string>
+
 </resources>
