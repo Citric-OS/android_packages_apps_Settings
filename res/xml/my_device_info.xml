@@ -44,6 +44,16 @@
             android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
             settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
 
+        <!-- AtomX version -->
+        <Preference
+            android:key="atomx_version"
+            android:order="4"
+            android:title="@string/atomx_version"
+            android:summary="@string/summary_placeholder"
+            android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.AtomXVersionPreferenceController"/>
+
+
         <!-- Account name -->
         <Preference
             android:key="branded_account"
