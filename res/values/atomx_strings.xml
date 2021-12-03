@@ -255,4 +255,8 @@
     <!-- Battery Temperature -->
     <string name="battery_temp">Battery temperature</string>
 
+    <!-- App List -->
+    <string name="search">Search</string>
+    <string name="search_apps">Search apps</string>
+
 </resources>
