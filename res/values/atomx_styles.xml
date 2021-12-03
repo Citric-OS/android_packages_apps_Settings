@@ -14,4 +14,8 @@
         <item name="android:lineHeight">15sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+
+    <!-- Applications fragment -->
+    <dimen name="default_margin">16dp</dimen>
+
 </resources>
