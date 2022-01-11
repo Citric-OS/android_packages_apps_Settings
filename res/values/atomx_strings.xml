@@ -264,4 +264,8 @@
     <string name="system_black_theme_title">Use Black theme</string>
     <string name="system_black_theme_summary">Force black background colors</string>
 
+    <!-- DT2S on statusbar-->
+    <string name="double_tap_sleep_title">Tap to sleep</string>
+    <string name="double_tap_sleep_summary">Double-tap anywhere on the status bar to turn off screen</string>
+
 </resources>
