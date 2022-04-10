@@ -155,4 +155,9 @@
     <string name="hidden_apps_title">Hidden apps</string>
     <string name="hidden_apps_summary">Applications that should be hidden from launcher. Requires a launcher restart for changes to take effect</string>
 
+    <!-- IME button space -->
+    <string name="navbar_category">Navigation bar</string>
+    <string name="navigation_bar_ime_space_title">IME button space</string>
+    <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
+
 </resources>
