@@ -206,4 +206,10 @@
     <string name="customization_category_title">Customization</string>
     <string name="statusbar_category_title">Statusbar Customizations</string>
 
+    <!-- Statusbar net monitor -->
+    <string name="statusbar_ntraffic">Network</string>
+    <string name="network_traffic_state_title">Network traffic</string>
+    <string name="network_traffic_state_summary">Show the network activity in statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Auto-hide threshold</string>
+
 </resources>
