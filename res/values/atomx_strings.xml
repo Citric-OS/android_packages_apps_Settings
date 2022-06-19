@@ -160,14 +160,6 @@
     <string name="navigation_bar_ime_space_title">IME button space</string>
     <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
 
-    <!-- Font style / Icon pack -->
-    <string name="theme_customization_font_title">Font style</string>
-    <string name="theme_customization_font_summary">Set system font style</string>
-    <string name="theme_customization_icon_pack_title">Icon pack</string>
-    <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
-    <string name="theme_customization_icon_shape_title">Icon shape</string>
-    <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
-
     <!-- Lockscreen media artwork -->
     <string name="lockscreen_media_art_category_title">Media art</string>
     <string name="lockscreen_media_blur_title">Media art blur level</string>
