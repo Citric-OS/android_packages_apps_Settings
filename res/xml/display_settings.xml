@@ -68,23 +68,15 @@
             settings:controller="com.android.settings.display.FontSizePreferenceController"
             settings:keywords="@string/keywords_font_size" />
 
-        <Preference
-            android:key="android.theme.customization.fonts"
-            android:title="@string/theme_customization_font_title"
-            android:summary="@string/theme_customization_font_summary"
-            android:fragment="com.android.settings.atomx.fragments.FontsPicker"/>
-
-        <Preference
-            android:key="android.theme.customization.icon_pack"
-            android:title="@string/theme_customization_icon_pack_title"
-            android:summary="@string/theme_customization_icon_pack_summary"
-            android:fragment="com.android.settings.atomx.fragments.StatusbarIcons"/>
-
-        <Preference
+        <ListPreference
+            android:key="android.theme.customization.font"
+            android:title="@string/theme_customization_font_title"/>
+        <ListPreference
             android:key="android.theme.customization.adaptive_icon_shape"
-            android:title="@string/theme_customization_icon_shape_title"
-            android:summary="@string/theme_customization_icon_shape_summary"
-            android:fragment="com.android.settings.atomx.fragments.IconShapes"/>
+            android:title="@string/theme_customization_icon_shape_title"/>
+        <ListPreference
+            android:key="android.theme.customization.icon_pack"
+            android:title="@string/theme_customization_icon_pack_title"/>
 
         <com.android.settings.display.ScreenZoomPreference
             android:fragment="com.android.settings.display.ScreenZoomSettings"
